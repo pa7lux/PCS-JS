@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homework</title>
+</head>
+<body>
+  <script>
+    //написать функцию, которая вернет в консоль противоположное число
+    var myfirstFunk = function(e) {
+      return -e;
+    }
+    console.log(myfirstFunk(1000)); // 4
+
+    // написать функцию, которая выведет в тело документа 1ю, 3ю и 5ю буквы
+    function stringSelect(string) {
+      return string[0]+string[2]+string[4];
+    }
+    document.write(stringSelect('Сосиска')); // м я т
+
+    // написать функцию, превращающую цисло в строку и возводящую в степень 2 символ
+    var mythrdFunk = function(somenumber, stepen) {
+      let stringFromNumber = String(somenumber);
+      //alert(typeof(stringFromNumber));
+      return stringFromNumber[1]**stepen;
+    }
+    console.log(mythrdFunk(345, 5)); // 4**5
+  </script>
+</body>
+</html>
