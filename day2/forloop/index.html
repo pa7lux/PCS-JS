@@ -12,8 +12,12 @@
     //for(i=0; i<myString.length; i++){
     //  console.log('letter: '+ myString[i]);
     //}
-    for(i in myString) {
-      console.log('letter: '+ myString[i]);
+    for(i of myString) {
+      if(i==' '){
+        console.log('ТУТ ПРОБЕЛ')
+      } else {
+        console.log('letter: '+ i);
+      }
     }
   </script>
 </body>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Switch</title>
+</head>
+<body>
+  <script>
+    var checkMusician = function(musician){
+      var myMusician = musician.toLocaleLowerCase();
+      console.log(myMusician);
+      switch(myMusician){
+        case 'dr. dre':
+          return 'rap';
+          break;
+        case 'dr.dre':
+          return 'rap';
+          break;
+        case 'the doors':
+          return 'rock';
+          break;
+        case 'doors':
+          return 'rock';
+          break;
+        default:
+          return 'Такого на моем раёне не слушают';
+      }
+    }
+    console.log(checkMusician('dr. Dre'));
+    console.log(checkMusician('dr. dre'));
+    console.log(checkMusician('dr.Dre'));
+    console.log(checkMusician('dr.dre'));
+    console.log(checkMusician('the Doors'));
+    console.log(checkMusician('Doors'));
+  </script>
+</body>
+</html>

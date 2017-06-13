@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homework</title>
+</head>
+<body>
+  <script>
+  //написать функцию под названием модуль числа (если а, то а, если -а то а)
+  var module = function(number){
+    return number>=0 ? number : -number;
+    //if(number>=0){
+    //  return number
+    //} else {
+    //  return -number
+    //}
+  }
+  //console.log(module(4));
+  //console.log(module(0));
+  //console.log(module(-4));
+  //От одного до 100 - если нечетное, то fizz, если четное, то buzz
+  var counter = 1;
+  while(counter<=100){
+    counter%2==0 ? console.log('buzz') : console.log('fizz');
+    counter++
+  }
+  //Доработать с циклом for, если увидел пробел, то там будет «ТУТ ПРОБЕЛ»
+  </script>
+</body>
+</html>

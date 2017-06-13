@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Classes</title>
+</head>
+<body>
+  <script>
+    class User {
+      constructor(name, login, password){
+        this.name = name;
+        this.login = login;
+        this.password = password;
+      }
+      sayHi(){
+        console.log('Привет '+ this.name);
+      }
+    }
+    var user1 = new User('Вася', 'vasya666', 'qwerty');
+
+    class maleUser extends User {
+      sayRegistred(){
+        console.log(this.name + ' ты зарегистрирован!');
+      }
+    }
+    class femaleUser extends User {
+      sayRegistred(){
+        console.log(this.name + ' ты зарегистрирована!');
+      }
+    }
+    var Leha = new maleUser('Леша', 'lexxx', '1234qwer');
+    Leha.sayHi();
+    Leha.sayRegistred();
+
+    var Olesya = new femaleUser('Олеся', 'Leska_111', 'queenof5lakes');
+    Olesya.sayHi();
+    Olesya.sayRegistred();
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Array</title>
+</head>
+<body>
+  <script>
+    var student1 = ['Leha', 'production director', true];
+    var student2 = ['Artur', 'producer', true];
+    var group = [student1, student2];
+
+    var group = [
+      [
+        'Leha',
+        ['production director', 'art director'],
+        true
+      ],
+      ['Artur', 'producer', true]
+    ];
+    //console.log(group[0][1][1]);
+    for(a of group){
+      for(i of a){
+        if(typeof(i)=='object'){
+          for(x of i){
+            console.log(x);
+          }
+        }else{
+          console.log(i);
+        }
+      }
+    }
+  </script>
+</body>
+</html>

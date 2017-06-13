@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Object</title>
+</head>
+<body>
+  <script>
+    var Sergey = {
+      name : 'Sergey',
+      surname : 'Mikhaltsov',
+      role : 'student',
+      job : 'Grape',
+      onclass : true
+    }
+    var Olesya = {
+      name : 'Olesya',
+      surname : 'Shalesnaya',
+      role : 'student',
+      job : 'queen of 5 lakes',
+      onclass : true
+    }
+    var pa7lux = {
+      name : 'Alexander',
+      surname : 'Patlukh',
+      role : 'teacher',
+      job : 'manager',
+      onclass : true
+    }
+    var group = [Sergey, Olesya, pa7lux];
+
+    var group = [
+      {
+        name : 'Alexander',
+        surname : 'Patlukh',
+        role : 'teacher',
+        job : 'manager',
+        onclass : true
+      },
+      {
+        name : 'Olesya',
+        surname : 'Shalesnaya',
+        role : 'student',
+        job : 'queen of 5 lakes',
+        onclass : true
+      },
+      {
+        name : 'Sergey',
+        surname : 'Mikhaltsov',
+        role : 'student',
+        job : 'Grape',
+        onclass : true
+      },
+      {
+        name : 'Artur',
+        surname : 'Pechorin',
+        role : 'student',
+        job : 'Grape',
+        onclass : true
+      }
+    ]
+
+    for(student of group){
+      if(student.role == 'teacher'){
+        console.log(student.name + ' учи людей!');
+      } else if(student.name=='Artur') {
+        console.log(student.name + ' я не забыл про тебя!');
+      }else {
+        console.log(student.name + ' учись, студент!');
+      }
+    }
+
+    var test = {key1:'hi', key2:3, key3:false}
+    for(i in test){
+      console.log(test[i]);
+    }
+
+  </script>
+</body>
+</html>
