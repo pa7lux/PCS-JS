@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .page {
+      min-width: 100vw;
+      min-height: 100vh;
+      display: flex;
+    }
+    .field {
+      width: 700px;
+      height: 700px;
+      margin: auto;
+      background-color: green;
+      position: relative;
+      border-radius: 8%;
+    }
+
+    .hero {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top:0;
+      left: 0;
+      border-radius: 50%;
+      background-image: url(shar.png);
+      -webkit-background-size: cover;
+      background-size: cover;
+      z-index: 2;
+    }
+    .goal {
+      width: 100px;
+      height: 100px;
+      background-color: black;
+      position: absolute;
+      right:0;
+      bottom:0;
+      border-radius: 50%;
+    }
+    </style>
+</head>
+<body>
+  <div class="page">
+    <div class="field">
+      <div class="hero"></div>
+      <div class="goal"></div>
+      <div class="winner"></div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var heroPos = $('.hero').position();
+      var goalPos = $('.goal').position();
+      $(document).keydown(function(e){
+        var currentHeroPos = $('.hero').position();
+        if(e.keyCode == 83 && currentHeroPos.top<=(goalPos.top-5)){
+          var newHeroPos = currentHeroPos.top+5+'px';
+          $('.hero').css('top', newHeroPos);
+        }else if(e.keyCode == 87 && currentHeroPos.top>5){
+          var newHeroPos = currentHeroPos.top-5+'px';
+          $('.hero').css('top', newHeroPos);
+        }else if(e.keyCode == 68 && currentHeroPos.left<=(goalPos.left-5)){
+          var newHeroPos = currentHeroPos.left+5+'px';
+          $('.hero').css('left', newHeroPos);
+        }else if(e.keyCode == 65 && currentHeroPos.left>=5){
+          var newHeroPos = currentHeroPos.left-5+'px';
+          $('.hero').css('left', newHeroPos);
+        }
+
+        if(currentHeroPos.top==goalPos.top && currentHeroPos.left == goalPos.left){
+          $('.hero').fadeOut('slow');
+          $('.winner').html('<h1 style="text-align:center; color:white;">Winner!</h1>');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

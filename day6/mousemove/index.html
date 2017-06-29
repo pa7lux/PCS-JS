@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .page {
+      min-width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      background-image: linear-gradient(to bottom right, violet, blue);
+    }
+    .content {
+      width: 500px;
+      height: 500px;
+      margin: auto;
+      border: 5px solid white;
+      position: relative;
+    }
+    .head {
+      width: 300px;
+      height: 300px;
+      background-image: url(head.png);
+      -webkit-background-size: cover;
+      background-size: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="content">
+      <div class="head"></div>
+    </div>
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    // определили половину ширины устройства
+    var centerOfViewport = window.innerWidth/2;
+    var centerOfViewportH = window.innerHeight/2;
+    console.log('Половина ширины vp: ' + centerOfViewport);
+    var startHeadLeft = parseInt($('.head').css('left'));
+    var startHeadTop = parseInt($('.head').css('top'));
+    console.log('Начальный отступ слева: ' + startHeadLeft);
+    $('.page').mousemove(function(e){
+      var posx = e.pageX;
+      var posy = e.pageY;
+      console.log('Текущее положение курсора по Х: ' + posx);
+      console.log('Текущее положение курсора по Y: ' + posy);
+      if(posx<=centerOfViewport){
+        let newLeft = startHeadLeft + posx/8 + 'px';
+        $('.head').css('left',newLeft)
+      }else if(posx>centerOfViewport){
+        let newLeft = startHeadLeft - posx/8+ 'px';
+        $('.head').css('left',newLeft)
+      }
+
+      if(posy<=centerOfViewportH){
+        let newTop = startHeadTop - posy/8 + 'px';
+        $('.head').css('top',newTop);
+      }else if(posy>centerOfViewportH){
+        let newTop = startHeadTop + posy/8 + 'px';
+        $('.head').css('top',newTop);
+      }
+
+    });
+  });
+</script>
+</body>
+</html>
